@@ -3,7 +3,7 @@ const http = require("http");
 const path = require("path");
 const compression = require("compression");
 
-const port = process.env.port || 8080;
+const port = process.env.PORT || 3001;
 
 const app = express();
 app.use(compression());
