@@ -1,27 +1,28 @@
 import { combineReducers } from "redux";
+import * as actions from "./userAction";
 
 const initialActivities = { result: [], error: null, fetching: false };
 
 const users = (state = initialActivities, action) => {
   switch (action.type) {
-    case "GET_USERS":
+    case actions.GET_USERS:
       return { ...state, fetching: true };
-    case "GET_USERS_SUCCESS":
+    case actions.GET_USERS_SUCCESS:
       return { result: action.result, error: null, fetching: false };
-    case "GET_USERS_ERROR":
+    case actions.GET_USERS_ERROR:
       return { result: [], error: action.error, fetching: false };
     default:
       return state;
   }
 };
 
-const user = (state = initialActivities, action) => {
+const addresses = (state = initialActivities, action) => {
   switch (action.type) {
-    case "GET_USER":
+    case actions.GET_USER_ADDRESSES:
       return { ...state, fetching: true };
-    case "GET_USER_SUCCESS":
+    case actions.GET_USER_ADDRESSES_SUCCESS:
       return { result: action.result, error: null, fetching: false };
-    case "GET_USER_ERROR":
+    case actions.GET_USER_ADDRESSES_ERROR:
       return { result: [], error: action.error, fetching: false };
     default:
       return state;
@@ -30,5 +31,5 @@ const user = (state = initialActivities, action) => {
 
 export default combineReducers({
   users,
-  user,
+  addresses,
 });

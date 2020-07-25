@@ -1,7 +1,7 @@
 import { takeLatest, call } from "redux-saga/effects";
 
 import * as actions from "./userAction";
-import { getUsersWorker, getUserWorker } from "./userWorkers";
+import { getUsersWorker, getUserAddressesWorker } from "./userWorkers";
 
 export function* watchGetUsers() {
   yield takeLatest(actions.GET_USERS, function* (loadAction) {
@@ -9,8 +9,8 @@ export function* watchGetUsers() {
   });
 }
 
-export function* watchGetUser() {
-  yield takeLatest(actions.GET_USER, function* (loadAction) {
-    yield call(getUserWorker, loadAction.payload);
+export function* watchGetUserAddresses() {
+  yield takeLatest(actions.GET_USER_ADDRESSES, function* (loadAction) {
+    yield call(getUserAddressesWorker, loadAction.payload);
   });
 }

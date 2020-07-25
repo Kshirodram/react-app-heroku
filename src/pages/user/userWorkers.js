@@ -39,21 +39,21 @@ export function* getUsersWorker() {
   }
 }
 
-export function* getUserWorker(userId) {
+export function* getUserAddressesWorker(userId) {
   try {
     yield put(showLoading());
-    const url = `${config.getUserInfoEndpoint}/${userId}`;
+    const url = `${config.getUserInfoEndpoint}/${userId}/addresses`;
     const result = yield call(callToAPI, "GET", url);
     yield put({
       result,
       error: null,
-      type: actions.GET_USER_SUCCESS,
+      type: actions.GET_USER_ADDRESSES_SUCCESS,
     });
   } catch (error) {
     yield put({
       result: null,
       error,
-      type: actions.GET_USER_ERROR,
+      type: actions.GET_USER_ADDRESSES_ERROR,
     });
   } finally {
     yield put(hideLoading());

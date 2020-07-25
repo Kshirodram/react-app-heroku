@@ -1,3 +1,3 @@
-import { watchGetUsers, watchGetUser } from "./userWatchers";
+import { watchGetUsers, watchGetUserAddresses } from "./userWatchers";
 
-export default [watchGetUsers, watchGetUser];
+export default [watchGetUsers, watchGetUserAddresses];
