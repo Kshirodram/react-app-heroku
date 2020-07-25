@@ -17,21 +17,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
-        options: {
-          presets: [
-            [
-              "@babel/preset-env",
-              {
-                targets: {
-                  esmodules: true,
-                },
-              },
-            ],
-            "@babel/preset-react",
-          ],
-          plugins: ["@babel/plugin-proposal-class-properties"],
-        },
+        loader: "babel-loader"
       },
       {
         test: /\.css$/i,
