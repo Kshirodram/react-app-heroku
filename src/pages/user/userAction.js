@@ -7,8 +7,15 @@ export const GET_USER_ADDRESSES = "GET_USER_ADDRESSES";
 export const GET_USER_ADDRESSES_SUCCESS = "GET_USER_ADDRESSES_SUCCESS";
 export const GET_USER_ADDRESSES_ERROR = "GET_USER_ADDRESSES_ERROR";
 
+export const SEARCH_USERS = "SEARCH_USERS";
+
 export const getUsersAction = (payload = null) => ({
   type: GET_USERS,
+  payload,
+});
+
+export const searchUsersAction = (payload = null) => ({
+  type: SEARCH_USERS,
   payload,
 });
 
