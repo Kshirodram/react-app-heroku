@@ -53,6 +53,7 @@ class User extends React.Component {
                       key={item.id}
                       className={Styles.user}
                       onClick={() => getUserAddresses(item.id)}
+                      tabIndex="-1"
                     >
                       <p>
                         {item.name}, <i>age:</i> {item.age}
